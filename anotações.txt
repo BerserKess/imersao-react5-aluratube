@@ -1,0 +1,9 @@
+Não precisa usar styled components nem deve criar para tudo
+Styled components criar uma função, um css e passar um children automatico
+
+Map converte de uma coisa para outra coisa
+Map é muito usado
+
+Procurar depois:
+// statement
+// retorno por expressão

@@ -1,0 +1,21 @@
+{
+    "name" : "Kesley Rainery (BerserKess)",
+    "job": "Front-End Dev Student",
+    "github": "BerserKess",
+    "playlists": {
+        "games": [
+            {
+                "title": "Assassin's Creed Valhalla - Fúria Viking",
+                "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
+                "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
+            }
+        ],
+        "Music": [
+            {
+                "title": "Alice In Chains - Down in a Hole (MTV Unplugged - HD Video)",
+                "url": "https://www.youtube.com/watch?v=nWK0kqjPSVI",
+                "thumbnail": "https://i.ytimg.com/vi/nWK0kqjPSVI/maxresdefault.jpg"
+            }
+        ]
+    }
+}
