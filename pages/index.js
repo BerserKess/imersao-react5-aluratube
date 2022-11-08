@@ -1,3 +1,4 @@
+import React from "react";
 import config from "../aluratube-config.json";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
@@ -9,6 +10,9 @@ function HomePage() {
   const homePageStyles = {
     // backgroundColor: "red"
   };
+  const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+  
+  
   return (
     // colocando entre parenteses tem mais felxibilidade na hroa de fazer o return
     <>
@@ -22,10 +26,11 @@ function HomePage() {
           // backgroundColor: "red",
         }}
       >
-        <Menu />
+        {/*Prop Drilling: Vai perfurando a aplicação passando as propriedades*/ }
+        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
         <Header />
         <Favorites favorites={config.favorites}></Favorites>
-        <Timeline playlists={config.playlists}>Conteudo</Timeline>
+        <Timeline searchValue={valorDoFiltro} playlists={config.playlists}>Conteudo</Timeline>
       </div>
     </>
   );
@@ -69,7 +74,7 @@ function Favorites({ favorites }) {
   );
 }
 
-function Timeline(props) {
+function Timeline({searchValue,...props}) {
   // tudo que se passa para um componente vem para um variavel só
   const playlistNames = Object.keys(props.playlists);
   return (
@@ -78,12 +83,16 @@ function Timeline(props) {
         //para cada playlist vai pegar os videos
         const videos = props.playlists[playlistName];
         return (
-          <section>
+          <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map((video) => {
+              {videos.filter((video) => {
+                const titleNormalized = video.title.toLowerCase()
+                const searchValueNormalized = searchValue.toLowerCase()
+                return titleNormalized.includes(searchValueNormalized)
+              }).map((video) => {
                 return (
-                  <a href={video.url} target="_blank">
+                  <a key={video.url} href={video.url} target="_blank">
                     <img src={video.thumbnail} />
                     <span>{video.title}</span>
                   </a>

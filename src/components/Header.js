@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
     background-image: url('./banner3.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     
   }
   img {
