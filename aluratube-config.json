@@ -8,6 +8,36 @@
                 "title": "Assassin's Creed Valhalla - Fúria Viking",
                 "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
                 "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
+            },
+            {
+                "title": "Assassin's Creed Valhalla - Fúria Viking",
+                "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
+                "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
+            },
+            {
+                "title": "Assassin's Creed Valhalla - Fúria Viking",
+                "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
+                "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
+            },
+            {
+                "title": "Assassin's Creed Valhalla - Fúria Viking",
+                "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
+                "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
+            },
+            {
+                "title": "Assassin's Creed Valhalla - Fúria Viking",
+                "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
+                "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
+            },
+            {
+                "title": "Assassin's Creed Valhalla - Fúria Viking",
+                "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
+                "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
+            },
+            {
+                "title": "Assassin's Creed Valhalla - Fúria Viking",
+                "url": "https://www.youtube.com/watch?v=vkUUivAXmXo",
+                "thumbnail": "https://i.ytimg.com/vi/vkUUivAXmXo/sddefault.jpg"
             }
         ],
         "Music": [
@@ -15,7 +45,52 @@
                 "title": "Alice In Chains - Down in a Hole (MTV Unplugged - HD Video)",
                 "url": "https://www.youtube.com/watch?v=nWK0kqjPSVI",
                 "thumbnail": "https://i.ytimg.com/vi/nWK0kqjPSVI/maxresdefault.jpg"
+            },
+            {
+                "title": "Alice In Chains - Down in a Hole (MTV Unplugged - HD Video)",
+                "url": "https://www.youtube.com/watch?v=nWK0kqjPSVI",
+                "thumbnail": "https://i.ytimg.com/vi/nWK0kqjPSVI/maxresdefault.jpg"
+            },
+            {
+                "title": "Alice In Chains - Down in a Hole (MTV Unplugged - HD Video)",
+                "url": "https://www.youtube.com/watch?v=nWK0kqjPSVI",
+                "thumbnail": "https://i.ytimg.com/vi/nWK0kqjPSVI/maxresdefault.jpg"
+            },
+            {
+                "title": "Alice In Chains - Down in a Hole (MTV Unplugged - HD Video)",
+                "url": "https://www.youtube.com/watch?v=nWK0kqjPSVI",
+                "thumbnail": "https://i.ytimg.com/vi/nWK0kqjPSVI/maxresdefault.jpg"
+            },
+            {
+                "title": "Alice In Chains - Down in a Hole (MTV Unplugged - HD Video)",
+                "url": "https://www.youtube.com/watch?v=nWK0kqjPSVI",
+                "thumbnail": "https://i.ytimg.com/vi/nWK0kqjPSVI/maxresdefault.jpg"
+            },
+            {
+                "title": "Alice In Chains - Down in a Hole (MTV Unplugged - HD Video)",
+                "url": "https://www.youtube.com/watch?v=nWK0kqjPSVI",
+                "thumbnail": "https://i.ytimg.com/vi/nWK0kqjPSVI/maxresdefault.jpg"
             }
         ]
-    }
+    },
+    "favorites": [
+        {
+            "id":1,
+            "github": "BerserKess"
+        },
+        {
+            "id":2,
+            "github": "omariosouto"
+        },
+        {
+            "id":3,
+            "github": "alura-challenges"
+        },
+        {
+            "id":4,
+            "github": "rafaballerini"
+        }
+    ]
+
+    
 }

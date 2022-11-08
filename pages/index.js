@@ -1,8 +1,9 @@
 import config from "../aluratube-config.json";
-import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
-import {StyledTimeline} from "../src/components/Timeline";
+import { StyledTimeline } from "../src/components/Timeline";
+import { StyledHeader } from "../src/components/Header";
+import { StyledFavorites } from "../src/components/Favorites";
 
 function HomePage() {
   const homePageStyles = {
@@ -13,17 +14,18 @@ function HomePage() {
     <>
       <CSSReset />
 
-      <div style={{
-                display: "flex",
-                flexDirection: "column",
-                flex: 1,
-                // backgroundColor: "red",
-            }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          // backgroundColor: "red",
+        }}
+      >
         <Menu />
         <Header />
-        <Timeline playlists={config.playlists}>
-            Conteudo
-        </Timeline>
+        <Favorites favorites={config.favorites}></Favorites>
+        <Timeline playlists={config.playlists}>Conteudo</Timeline>
       </div>
     </>
   );
@@ -31,29 +33,10 @@ function HomePage() {
 
 export default HomePage;
 
-// function Menu() {
-//   return <div>Menu</div>;
-// }
-//criar o estilo da div do header
-const StyledHeader = styled.div`
-  img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  .user-info {
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 16px 32px;
-    gap: 16px;
-  }
-`;
 function Header() {
   return (
     <StyledHeader>
-      {/* {</*img src="banner" />} */}
+      <div className="banner"></div>
       <section className="user-info">
         <img src={`https://github.com/${config.github}.png`} />
         <div>
@@ -65,6 +48,27 @@ function Header() {
   );
 }
 
+function Favorites({ favorites }) {
+  return (
+    <StyledFavorites>
+      <h3>Favorites</h3>
+      <div className="favorite-content">
+        {favorites.map((favorite) => (
+          <a
+            href={`https://github.com/${favorite.github}`}
+            target="_blank"
+            className="favorite-info"
+            key={favorite.id}
+          >
+            <img src={`https://github.com/${favorite.github}.png`} alt="###" />
+            <p>@{favorite.github}</p>
+          </a>
+        ))}
+      </div>
+    </StyledFavorites>
+  );
+}
+
 function Timeline(props) {
   // tudo que se passa para um componente vem para um variavel só
   const playlistNames = Object.keys(props.playlists);
@@ -73,14 +77,13 @@ function Timeline(props) {
       {playlistNames.map((playlistName) => {
         //para cada playlist vai pegar os videos
         const videos = props.playlists[playlistName];
-        console.log(videos);
         return (
           <section>
             <h2>{playlistName}</h2>
             <div>
               {videos.map((video) => {
                 return (
-                  <a href={video.url}>
+                  <a href={video.url} target="_blank">
                     <img src={video.thumbnail} />
                     <span>{video.title}</span>
                   </a>
