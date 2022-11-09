@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+    background-color: ${({ theme }) => theme.backgroundLevel1};
     margin-top: 50px;
     .banner {
     width: 100%;

@@ -1,6 +1,6 @@
 import React from "react";
 import config from "../aluratube-config.json";
-import { CSSReset } from "../src/components/CSSReset";
+
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { StyledHeader } from "../src/components/Header";
@@ -11,13 +11,10 @@ function HomePage() {
     // backgroundColor: "red"
   };
   const [valorDoFiltro, setValorDoFiltro] = React.useState("");
-  
-  
+
   return (
     // colocando entre parenteses tem mais felxibilidade na hroa de fazer o return
     <>
-      <CSSReset />
-
       <div
         style={{
           display: "flex",
@@ -26,11 +23,16 @@ function HomePage() {
           // backgroundColor: "red",
         }}
       >
-        {/*Prop Drilling: Vai perfurando a aplicação passando as propriedades*/ }
-        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
+        {/*Prop Drilling: Vai perfurando a aplicação passando as propriedades*/}
+        <Menu
+          valorDoFiltro={valorDoFiltro}
+          setValorDoFiltro={setValorDoFiltro}
+        />
         <Header />
         <Favorites favorites={config.favorites}></Favorites>
-        <Timeline searchValue={valorDoFiltro} playlists={config.playlists}>Conteudo</Timeline>
+        <Timeline searchValue={valorDoFiltro} playlists={config.playlists}>
+          Conteudo
+        </Timeline>
       </div>
     </>
   );
@@ -74,7 +76,7 @@ function Favorites({ favorites }) {
   );
 }
 
-function Timeline({searchValue,...props}) {
+function Timeline({ searchValue, ...props }) {
   // tudo que se passa para um componente vem para um variavel só
   const playlistNames = Object.keys(props.playlists);
   return (
@@ -86,18 +88,20 @@ function Timeline({searchValue,...props}) {
           <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.filter((video) => {
-                const titleNormalized = video.title.toLowerCase()
-                const searchValueNormalized = searchValue.toLowerCase()
-                return titleNormalized.includes(searchValueNormalized)
-              }).map((video) => {
-                return (
-                  <a key={video.url} href={video.url} target="_blank">
-                    <img src={video.thumbnail} />
-                    <span>{video.title}</span>
-                  </a>
-                );
-              })}
+              {videos
+                .filter((video) => {
+                  const titleNormalized = video.title.toLowerCase();
+                  const searchValueNormalized = searchValue.toLowerCase();
+                  return titleNormalized.includes(searchValueNormalized);
+                })
+                .map((video) => {
+                  return (
+                    <a key={video.url} href={video.url} target="_blank">
+                      <img src={video.thumbnail} />
+                      <span>{video.title}</span>
+                    </a>
+                  );
+                })}
             </div>
           </section>
         );
