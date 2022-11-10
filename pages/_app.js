@@ -4,6 +4,7 @@ import { CSSReset } from "../src/components/CSSReset";
 import ColorModeProvider, {
   ColorModeContext,
 } from "../src/components/Menu/ColorMode";
+import RegisterVideo from "../src/components/RegisterVideo";
 /**
  * _app.js: Um arquivo de definições globais do NextJS
  *  ThemeProvider -> Tem função de prover um tema para a aplicação toda
@@ -32,6 +33,7 @@ export function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme[contexto.mode]}>
       <CSSReset />
       <Component {...pageProps} />
+      <RegisterVideo/>
     </ThemeProvider>
   );
 }
