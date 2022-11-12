@@ -5,12 +5,31 @@ import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { StyledHeader } from "../src/components/Header";
 import { StyledFavorites } from "../src/components/Favorites";
+import { createClient } from "@supabase/supabase-js";
+import { videoService } from "../src/services/videoServices";
 
 function HomePage() {
   const homePageStyles = {
     // backgroundColor: "red"
   };
+  const service = videoService();
   const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+  const [playlists, setPlaylists] = React.useState({});
+  // const playlists = {
+  //   "jogos": [],
+  // }
+  React.useEffect(() => {
+    service.getAllVideos().then((dados) => {
+      const novasPlaylists = { ...playlists };
+      dados.data.forEach((video) => {
+        if (!novasPlaylists[video.playlist]) {
+          novasPlaylists[video.playlist] = [];
+        }
+        novasPlaylists[video.playlist].push(video);
+      });
+      setPlaylists(novasPlaylists);
+    });
+  }, []);
 
   return (
     // colocando entre parenteses tem mais felxibilidade na hroa de fazer o return
@@ -30,7 +49,7 @@ function HomePage() {
         />
         <Header />
         <Favorites favorites={config.favorites}></Favorites>
-        <Timeline searchValue={valorDoFiltro} playlists={config.playlists}>
+        <Timeline searchValue={valorDoFiltro} playlists={playlists}>
           Conteudo
         </Timeline>
       </div>
@@ -97,7 +116,7 @@ function Timeline({ searchValue, ...props }) {
                 .map((video) => {
                   return (
                     <a key={video.url} href={video.url} target="_blank">
-                      <img src={video.thumbnail} />
+                      <img src={video.thumb} />
                       <span>{video.title}</span>
                     </a>
                   );
